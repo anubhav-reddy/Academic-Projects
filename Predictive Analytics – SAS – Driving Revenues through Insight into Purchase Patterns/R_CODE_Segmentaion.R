@@ -9,6 +9,8 @@ sapply(customershare, function(x) sum(is.na(x)))
 customershare <- na.omit(customershare)
 a <- na.omit(customershare)
 a <- scale(a[2:22])
+
+# Segmenting the data into 4 clusters
 kmean = kmeans(a,centers = 4,iter.max = 10,nstart = 20)
 
 aggregate(a,by=list(kmean$cluster),FUN=mean)
