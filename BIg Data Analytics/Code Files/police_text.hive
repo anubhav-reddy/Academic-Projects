@@ -1,0 +1,29 @@
+CREATE TABLE police_text  (Incident_Number_year VARCHAR(50),
+Year_of_Incident INT,
+Incident_Number INT,
+Type_of_Incident VARCHAR(50),
+Penalty_Class VARCHAR(50),
+Type_of_Location VARCHAR(50),
+Zip_Code INT,
+X_Coordinate FLOAT,
+Y_Coordinate FLOAT,
+Reporting_Area INT,
+Beat INT,
+Division VARCHAR(50),
+Sector INT,
+Council_District INT,
+Complainant_Race VARCHAR(50),
+Complainant_Gender VARCHAR(50),
+Complainant_Age INT,
+Complainant_Zip_Code INT,
+Offense_Status VARCHAR(100),
+UCR_Offense_Description VARCHAR(100),
+Modus_Operandi VARCHAR(200),
+Family_Offense VARCHAR(20),
+Hate_Crime VARCHAR(20),
+Gang_Related_Offense VARCHAR(20),
+Drug_Related_Incident VARCHAR(20))
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' lines terminated BY '\n' tblproperties("skip.header.line.count"="1");
+
+
+LOAD DATA LOCAL INPATH 'Police.tsv' OVERWRITE INTO TABLE police_text;

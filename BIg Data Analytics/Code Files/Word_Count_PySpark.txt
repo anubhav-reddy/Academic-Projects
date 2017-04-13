@@ -1,0 +1,37 @@
+Word count of modus_operandi
+
+corpus = sc.textFile("file:///root/project/modus_operandi.txt")
+count = corpus.flatMap(lambda line: line.split(" "))
+count = count.map(lambda word: (word, 1))
+count = count.reduceByKey(lambda a,b: a+b)
+
+from pyspark import SparkContext
+df = sqlContext.createDataFrame(count, ['word','count'])
+df = df.sort('count',ascending=False)
+df.show(30)
+
+
+Word count of type_incident
+
+corpus = sc.textFile("file:///root/project/type_incident.txt")
+count = corpus.flatMap(lambda line: line.split(" "))
+count = count.map(lambda word: (word, 1))
+count = count.reduceByKey(lambda a,b: a+b)
+
+from pyspark import SparkContext
+df = sqlContext.createDataFrame(count, ['word','count'])
+df = df.sort('count',ascending=False)
+df.show(30)
+
+
+Word count of type_location
+
+corpus = sc.textFile("file:///root/project/type_location.txt")
+count = corpus.flatMap(lambda line: line.split(" "))
+count = count.map(lambda word: (word, 1))
+count = count.reduceByKey(lambda a,b: a+b)
+
+from pyspark import SparkContext
+df = sqlContext.createDataFrame(count, ['word','count'])
+df = df.sort('count',ascending=False)
+df.show(30)

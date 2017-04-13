@@ -1,0 +1,3 @@
+set hive.cli.print.header=true;
+Select type_of_incident from police_text;
+

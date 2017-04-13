@@ -1,0 +1,5 @@
+set hive.cli.print.header=true;
+select zip_code, count(incident_number) as count_incidents 
+from police_text 
+GROUP BY zip_code; 
+

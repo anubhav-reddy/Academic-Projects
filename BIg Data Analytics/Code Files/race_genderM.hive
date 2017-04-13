@@ -1,0 +1,5 @@
+set hive.cli.print.header=true;
+select year_of_incident as Year, Complainant_Race, Complainant_Gender, count(incident_number) as count_incidents  
+from police_text WHERE Complainant_Gender = "M" AND complainant_race <> "TEST" AND Year_of_incident != 2014
+GROUP BY year_of_incident, Complainant_Race, Complainant_Gender;
+

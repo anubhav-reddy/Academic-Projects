@@ -1,0 +1,5 @@
+set hive.cli.print.header=true;
+select ucr_offense_description, count(incident_number) as count_incidents 
+from police_text 
+GROUP BY ucr_offense_description; 
+

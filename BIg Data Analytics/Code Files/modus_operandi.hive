@@ -1,0 +1,3 @@
+set hive.cli.print.header=true;
+
+Select modus_operandi from police_text;
